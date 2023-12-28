@@ -24,22 +24,22 @@ public class PlayerMovement : MonoBehaviour
         pos = new Vector3(Horizontal * moveSpeed, Vertical * moveSpeed, 0);
         transform.position += pos;
 
-        if (Input.GetKey("a") && !Input.GetKey("w") && !Input.GetKey("s"))
+        if (Input.GetKey("a") )
         {
             animator.SetTrigger("normal");
             SR.flipX = true;
-        }else if(Input.GetKey("d") && !Input.GetKey("w") && !Input.GetKey("s"))
+        }else if(Input.GetKey("d") )
         {
             animator.SetTrigger("normal");
             SR.flipX = false;
         }
 
-        if(Input.GetKey("w"))
+        if(Input.GetKey("w") && !Input.GetKey("a") && !Input.GetKey("d"))
         {
             SR.flipX = false;
             animator.SetTrigger("up");
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey("s") && !Input.GetKey("a") && !Input.GetKey("d"))
         {
             SR.flipX = false;
             animator.SetTrigger("down");
