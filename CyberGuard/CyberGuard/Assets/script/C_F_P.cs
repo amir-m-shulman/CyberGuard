@@ -5,6 +5,7 @@ using UnityEngine;
 public class C_F_P : MonoBehaviour
 {
     SpriteRenderer SR;
+    Vector3 pos;
     
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,12 @@ public class C_F_P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Input.mousePosition;
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
+       
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,6 +29,7 @@ public class C_F_P : MonoBehaviour
         {
             Cursor.visible = false;
             SR.enabled = true;
+            print("enter oz");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -31,6 +38,7 @@ public class C_F_P : MonoBehaviour
         {
             Cursor.visible = true;
             SR.enabled = false;
+            print("exit oz");
         }
     }
 }
