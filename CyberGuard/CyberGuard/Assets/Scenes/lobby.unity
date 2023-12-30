@@ -1976,8 +1976,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0015000105, y: 0.0033000112, z: 0}
-    m_Extent: {x: 1.3084, y: 1.302, z: 0}
+    m_Center: {x: -0.004499972, y: -0.0024999976, z: 0}
+    m_Extent: {x: 1.3013, y: 1.3053, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2108,6 +2108,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1188952067418207800, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188952067418207800, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -543985641
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188952067418207800, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: -543985641
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482811461291660708, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482811461291660708, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -543985641
+      objectReference: {fileID: 0}
     - target: {fileID: 2023426264858734625, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
       propertyPath: m_RootOrder
       value: 2
