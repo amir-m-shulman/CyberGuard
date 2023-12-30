@@ -6,6 +6,7 @@ TagManager:
   tags:
   - computa
   - go to level one
+  - talk
   layers:
   - Default
   - TransparentFX

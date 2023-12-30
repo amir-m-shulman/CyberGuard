@@ -13,6 +13,7 @@ public class talk : MonoBehaviour
 
     [SerializeField] GameObject bridgh;
     [SerializeField] GameObject edge;
+    [SerializeField] float delay;
 
     // Start is called before the first frame update
     void Start()
@@ -64,8 +65,12 @@ public class talk : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            bridgh.SetActive(true);
-            Invoke("DB", 3.2f);
+            if(bridgh != null)
+            {
+                bridgh.SetActive(true);
+            }
+            
+            Invoke("DB", delay);
         }
     }
     private void DB()

@@ -595,6 +595,7 @@ MonoBehaviour:
   textSpeed: 0.08
   bridgh: {fileID: 2129902650}
   edge: {fileID: 837042581}
+  delay: 3.2
 --- !u!1 &630295507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,8 +1977,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.004499972, y: -0.0024999976, z: 0}
-    m_Extent: {x: 1.3013, y: 1.3053, z: 0}
+    m_Center: {x: 0.000100016594, y: -0.00044995546, z: 0}
+    m_Extent: {x: 1.2946, y: 1.3046501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

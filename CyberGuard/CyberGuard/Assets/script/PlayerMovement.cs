@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator animator;
 
     [SerializeField] next_scene ns;
+
+    [SerializeField] GameObject talk_text;
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();
@@ -71,6 +73,10 @@ public class PlayerMovement : MonoBehaviour
             ns.Next_level();
             print("go to level one!");
 
+        }
+        if(collision.gameObject.CompareTag("talk") && talk_text != null)
+        {
+            talk_text.SetActive(true);
         }
     }
     private void respawn()
