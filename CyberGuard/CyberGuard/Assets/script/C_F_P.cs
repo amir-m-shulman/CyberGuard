@@ -20,6 +20,8 @@ public class C_F_P : MonoBehaviour
         pos = transform.position;
         pos.z = 0;
         transform.position = pos;
+
+        
        
 
     }
@@ -31,6 +33,7 @@ public class C_F_P : MonoBehaviour
             SR.enabled = true;
             print("enter oz");
         }
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -41,4 +44,6 @@ public class C_F_P : MonoBehaviour
             print("exit oz");
         }
     }
+
+    
 }

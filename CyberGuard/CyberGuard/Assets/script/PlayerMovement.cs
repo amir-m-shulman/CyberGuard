@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 pos;
 
     [SerializeField] Animator animator;
+
+    [SerializeField] next_scene ns;
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();
@@ -49,5 +52,29 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Respawn") && SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            respawn();
+        }
+        else if(collision.CompareTag("Respawn"))
+        {
+            transform.position = new Vector2(0, 0);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("go to level one"))
+        {
+            ns.Next_level();
+            print("go to level one!");
+
+        }
+    }
+    private void respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

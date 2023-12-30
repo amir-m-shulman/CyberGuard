@@ -24,6 +24,7 @@ public class next_scene : MonoBehaviour
     private void NL2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        print("next level!");
     }
 
 }
