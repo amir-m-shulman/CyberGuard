@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class next_scene : MonoBehaviour
 {
     [SerializeField] float delay;
+    [SerializeField] int LoadedScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class next_scene : MonoBehaviour
     }
     private void NL2()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(LoadedScene);
         print("next level!");
     }
 

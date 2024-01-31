@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] next_scene ns;
 
     [SerializeField] GameObject talk_text;
+
+    public static string enemy;
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();
@@ -77,6 +79,10 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.CompareTag("talk") && talk_text != null)
         {
             talk_text.SetActive(true);
+        }
+        if(collision.gameObject.CompareTag("blue virus"))
+        {
+            enemy = "blue virus";
         }
     }
     private void respawn()
