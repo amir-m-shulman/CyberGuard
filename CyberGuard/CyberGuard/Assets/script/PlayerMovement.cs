@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     float Vertical;
     float Horizontal;
-    Vector3 pos;
+    //Vector3 pos;
 
     [SerializeField] Animator animator;
 
@@ -18,18 +18,22 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] GameObject talk_text;
 
+    Rigidbody2D rb;
+
     public static string enemy;
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
         Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
-        pos = new Vector3(Horizontal * moveSpeed, Vertical * moveSpeed, 0);
-        transform.position += pos;
+        //pos = new Vector3(Horizontal * moveSpeed, Vertical * moveSpeed, 0);
+        //transform.position += pos;
+        rb.velocity = new Vector3(Horizontal * moveSpeed, Vertical * moveSpeed, 0);
 
         if (Input.GetKey("a") )
         {
