@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     float Vertical;
     float Horizontal;
-    //Vector3 pos;
+    Vector2 pos;
 
     [SerializeField] Animator animator;
 
@@ -31,9 +31,9 @@ public class PlayerMovement : MonoBehaviour
     {
         Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
-        //pos = new Vector3(Horizontal * moveSpeed, Vertical * moveSpeed, 0);
+        pos = new Vector2(Horizontal * moveSpeed, Vertical * moveSpeed);
         //transform.position += pos;
-        rb.velocity = new Vector3(Horizontal * moveSpeed, Vertical * moveSpeed, 0);
+        rb.velocity = pos;
 
         if (Input.GetKey("a") )
         {
