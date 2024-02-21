@@ -1978,8 +1978,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0038999915, y: 0.00024998188, z: 0}
-    m_Extent: {x: 1.3058, y: 1.30795, z: 0}
+    m_Center: {x: 0.0032500029, y: -0.0033500195, z: 0}
+    m_Extent: {x: 1.30515, y: 1.29575, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2174,10 +2174,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4031450327140208930, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4621404569585912895, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
       propertyPath: ns
       value: 
       objectReference: {fileID: 1518364186}
+    - target: {fileID: 4621404569585912895, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5824702494367772269, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
       propertyPath: m_Name
       value: Player
