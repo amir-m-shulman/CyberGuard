@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00089997053, y: 0.0035000145, z: 0}
-    m_Extent: {x: 1.0076001, y: 1.0025, z: 0}
+    m_Center: {x: -0.0026500225, y: -0.0016999841, z: 0}
+    m_Extent: {x: 1.00665, y: 1.0002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922855919549234921}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: 0.7400002, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -116,7 +116,7 @@ Transform:
   - {fileID: 662640951679124937}
   - {fileID: 6542713251981784949}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2347056934750194216
 SpriteRenderer:
@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   L: {fileID: 7115745728433876020}
+  player: {fileID: 0}
+  PM: {fileID: 0}
 --- !u!61 &5390408192178632039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -294,8 +296,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00030001998, y: 0.000100016594, z: 0}
-    m_Extent: {x: 0.9984, y: 1.0042, z: 0}
+    m_Center: {x: -0.00034999847, y: 0.0041000247, z: 0}
+    m_Extent: {x: 1.00715, y: 1.0055001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

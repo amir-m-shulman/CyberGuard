@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     public static string enemy;
+
+    public string control = "player";
+    public bool PlayerTurn = true;
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();
