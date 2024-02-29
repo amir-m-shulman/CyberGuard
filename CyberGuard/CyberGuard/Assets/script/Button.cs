@@ -9,16 +9,19 @@ public class Button : MonoBehaviour
     [SerializeField] Light2D L;
     [SerializeField] GameObject player;
     [SerializeField] PlayerMovement PM;
+    bool go;
     // Start is called before the first frame update
-    void Start()
+    
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(go)
+        {
+            player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, 15 * Time.deltaTime);
+            if(player.transform.position == transform.position)
+            {
+                go = false;
+            }
+        }
     }
     private void OnMouseEnter()
     {
@@ -27,10 +30,13 @@ public class Button : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (PM.control == "player" && Input.GetKey("space") && PM.PlayerTurn)
+        print("onbuton");
+        if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn)
         {
-            player.transform.position = transform.position;
+            //player.transform.position = transform.position;
+            PM.PlayerTurn = false;
             print("move!");
+            go = true;
         }
     }
 

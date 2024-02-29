@@ -6,6 +6,7 @@ public class spawn_enemy : MonoBehaviour
 {
     GameObject virus;
     [SerializeField] GameObject BV;
+    [SerializeField] PlayerMovement PM;
     
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class spawn_enemy : MonoBehaviour
             virus = Instantiate(BV) as GameObject;
         }
         virus.SetActive(true);
+        PM.CanMove = false;
 
         
         

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool CanMove;
+
     [SerializeField] float moveSpeed = 7f;
     SpriteRenderer SR;
 
@@ -21,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     public static string enemy;
-
+    //for fight
     public string control = "player";
     public bool PlayerTurn = true;
     private void Start()
@@ -36,7 +38,11 @@ public class PlayerMovement : MonoBehaviour
         Horizontal = Input.GetAxis("Horizontal");
         pos = new Vector2(Horizontal * moveSpeed, Vertical * moveSpeed);
         //transform.position += pos;
-        rb.velocity = pos;
+        if(CanMove)
+        {
+            rb.velocity = pos;
+
+        }
 
         if (Input.GetKey("a") )
         {
