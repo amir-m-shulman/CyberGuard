@@ -7,11 +7,14 @@ public class stupid : MonoBehaviour
     PlayerMovement PM;
     Vector3 p;
     private bool once = false;
+    private Animator a;
+    private bool nomove = false;
     // Start is called before the first frame update
     void Start()
     {
         GameObject p = GameObject.Find("Player");
         PM = p.GetComponent<PlayerMovement>();
+        a = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class stupid : MonoBehaviour
             }
             
 
-            if(transform.position != p)
+            if(transform.position != p && !nomove)
             {
                 transform.position = Vector2.MoveTowards(transform.position, p, 15 * Time.deltaTime);
             }
@@ -55,6 +58,7 @@ public class stupid : MonoBehaviour
     }
     private void die()
     {
-        print("die virus!");
+        nomove = true;
+        a.SetTrigger("die");
     }
 }
