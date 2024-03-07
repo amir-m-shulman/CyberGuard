@@ -34,6 +34,7 @@ public class Button : MonoBehaviour
         {
             //player.transform.position = transform.position;
             PM.PlayerTurn = false;
+            Invoke("gonpc", 0.5f);
             print("move!");
             go = true;
         }
@@ -42,5 +43,9 @@ public class Button : MonoBehaviour
     private void OnMouseExit()
     {
         L.intensity = 0.4f;
+    }
+    private void gonpc()
+    {
+        PM.GoNpc = true;
     }
 }
