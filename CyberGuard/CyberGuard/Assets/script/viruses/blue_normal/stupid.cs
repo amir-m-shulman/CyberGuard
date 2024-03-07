@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class stupid : MonoBehaviour
 {
-    [SerializeField] PlayerMovement PM;
+    PlayerMovement PM;
     Vector3 p;
     private bool once = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject p = GameObject.Find("Player");
+        PM = p.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class spawn_enemy : MonoBehaviour
 {
     GameObject virus;
-    [SerializeField] GameObject BV;
+    [SerializeField] GameObject SBV;
     [SerializeField] PlayerMovement PM;
     public static int enters;
     
@@ -14,12 +14,12 @@ public class spawn_enemy : MonoBehaviour
     {
         if(enters == 0)
         {
-            PlayerMovement.enemy = "blue virus";
+            PlayerMovement.enemy = "stupid blue virus";
         }
         
-        if(PlayerMovement.enemy == "blue virus")
+        if(PlayerMovement.enemy == "stupid blue virus")
         {
-            virus = Instantiate(BV);
+            virus = Instantiate(SBV);
         }
         PM.CanMove = false;
 

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class fight : MonoBehaviour
 {
-    [SerializeField] PlayerMovement PM;
+    PlayerMovement PM;
     private bool once;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject p = GameObject.Find("Player");
+        PM = p.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
