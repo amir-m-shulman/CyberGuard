@@ -14,7 +14,7 @@ public class Button : MonoBehaviour
     
     private void Update()
     {
-        if(go)
+        if(go )
         {
             player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, 15 * Time.deltaTime);
             if(player.transform.position == transform.position)
@@ -30,7 +30,7 @@ public class Button : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn && Vector2.Distance(player.transform.position,transform.position) < 3 * PM.Mish)
+        if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn && Vector2.Distance(player.transform.position,transform.position) < 3 * PM.Mish && Vector2.Distance(player.transform.position, transform.position) > 1)
         {
             //player.transform.position = transform.position;
             PM.PlayerTurn = false;
