@@ -30,8 +30,7 @@ public class Button : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        print("onbuton");
-        if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn)
+        if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn && Vector2.Distance(player.transform.position,transform.position) < 3 * PM.Mish)
         {
             //player.transform.position = transform.position;
             PM.PlayerTurn = false;

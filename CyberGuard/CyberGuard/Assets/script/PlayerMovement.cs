@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     //for fight
     public string control = "player";
     public bool PlayerTurn = true;
+    public int Mish = 1;
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();

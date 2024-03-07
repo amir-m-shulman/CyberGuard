@@ -13,9 +13,8 @@ public class spawn_enemy : MonoBehaviour
     {
         if(PlayerMovement.enemy == "blue virus")
         {
-            virus = Instantiate(BV) as GameObject;
+            virus = Instantiate(BV);
         }
-        virus.SetActive(true);
         PM.CanMove = false;
 
         
