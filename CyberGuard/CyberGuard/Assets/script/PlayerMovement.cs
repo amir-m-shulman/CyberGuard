@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool CanMove;
+    public bool CanMove = true;
 
     [SerializeField] float moveSpeed = 7f;
     SpriteRenderer SR;
@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        print(CanMove);
         Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
         pos = new Vector2(Horizontal * moveSpeed, Vertical * moveSpeed);

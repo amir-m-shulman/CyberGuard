@@ -9,12 +9,15 @@ public class stupid : MonoBehaviour
     private bool once = false;
     private Animator a;
     private bool nomove = false;
+    [SerializeField] GameObject lose_screen;
+    next_scene ns;
     // Start is called before the first frame update
     void Start()
     {
         GameObject p = GameObject.Find("Player");
         PM = p.GetComponent<PlayerMovement>();
         a = GetComponent<Animator>();
+        ns = p.GetComponent<next_scene>();
     }
 
     // Update is called once per frame
@@ -46,11 +49,11 @@ public class stupid : MonoBehaviour
         {
             die();
         }
-    }
-    private IEnumerator Move()
-    {
-       
-        return null;
+        if(collision.gameObject.CompareTag("Finish"))
+        {
+            lose_screen.SetActive(true);
+            print("you lost!");
+        }
     }
     private void moveplayer()
     {
@@ -60,5 +63,12 @@ public class stupid : MonoBehaviour
     {
         nomove = true;
         a.SetTrigger("die");
+        spawn_enemy.enters += 1;
+        Invoke("dt", 1);
+    }
+    private void dt()
+    {
+        ns.Next_level();
+        Destroy(this);
     }
 }

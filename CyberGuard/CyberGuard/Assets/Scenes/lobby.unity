@@ -1073,6 +1073,7 @@ GameObject:
   - component: {fileID: 851491352}
   - component: {fileID: 851491355}
   - component: {fileID: 851491356}
+  - component: {fileID: 851491357}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1232,6 +1233,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &851491357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851491351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023f87a1d949d3b48b9b4cd0cf117c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pm: {fileID: 7765187175534168950}
 --- !u!1 &940576759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,8 +1992,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.000100016594, y: -0.00089997053, z: 0}
-    m_Extent: {x: 1.3076, y: 1.3022001, z: 0}
+    m_Center: {x: 0.002849996, y: -0.0036500096, z: 0}
+    m_Extent: {x: 1.30545, y: 1.3060501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2191,3 +2205,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+--- !u!114 &7765187175534168950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4621404569585912895, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+  m_PrefabInstance: {fileID: 7765187175534168949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6047960038b9b4a89c85e8f08803f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
