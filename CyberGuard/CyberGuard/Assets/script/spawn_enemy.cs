@@ -20,7 +20,8 @@ public class spawn_enemy : MonoBehaviour
         if(PlayerMovement.enemy == "stupid blue virus")
         {
             virus = Instantiate(SBV);
-            virus.transform.position = new Vector2(-6, 10);
+            if(enters == 0) { virus.transform.position = new Vector2(-6, 10); }
+            else { virus.transform.position = new Vector2(-8, 10); }
         }
         PM.CanMove = false;
 

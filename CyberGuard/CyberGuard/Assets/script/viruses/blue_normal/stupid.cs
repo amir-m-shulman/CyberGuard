@@ -27,7 +27,14 @@ public class stupid : MonoBehaviour
         {
             if (once) 
             {
-                p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+                if(spawn_enemy.enters == 0)
+                {
+                    p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+                }
+                else
+                {
+                    p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
+                }
                 once = false;
             }
             
@@ -64,6 +71,7 @@ public class stupid : MonoBehaviour
         nomove = true;
         a.SetTrigger("die");
         spawn_enemy.enters += 1;
+        print(spawn_enemy.enters);
         Invoke("dt", 1);
     }
     private void dt()
