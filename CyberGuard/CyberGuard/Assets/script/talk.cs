@@ -14,6 +14,7 @@ public class talk : MonoBehaviour
     [SerializeField] GameObject bridgh;
     [SerializeField] GameObject edge;
     [SerializeField] float delay;
+    [SerializeField] PlayerMovement pm;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class talk : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
+        pm.control = "none";
         StartCoroutine(TypeLine());
     }
 
@@ -75,6 +77,7 @@ public class talk : MonoBehaviour
     }
     private void DB()
     {
+        pm.control = "player";
         Destroy(edge);
     }
 }
