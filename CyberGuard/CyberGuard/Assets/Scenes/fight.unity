@@ -457,7 +457,7 @@ MonoBehaviour:
   textSpeed: 0.08
   bridgh: {fileID: 0}
   edge: {fileID: 403405991}
-  delay: 3.2
+  delay: 0
 --- !u!114 &28890755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,8 +3640,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.8441997, y: -5.8140497, z: 0}
-    m_Extent: {x: 15.191999, y: 2.16345, z: 0}
+    m_Center: {x: -3.83595, y: -5.8188, z: 0}
+    m_Extent: {x: 15.19605, y: 2.1538, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5535,7 +5535,7 @@ MonoBehaviour:
   textSpeed: 0.08
   bridgh: {fileID: 0}
   edge: {fileID: 932425662}
-  delay: 3.2
+  delay: 0
 --- !u!114 &1521698226
 MonoBehaviour:
   m_ObjectHideFlags: 0

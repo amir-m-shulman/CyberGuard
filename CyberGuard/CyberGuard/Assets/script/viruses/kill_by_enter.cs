@@ -16,7 +16,10 @@ public class kill_by_enter : MonoBehaviour
             {
                 Destroy(c);
             }
-            p.transform.position = transform.position; 
+            if(p != null)
+            {
+                p.transform.position = transform.position;
+            }
         }
     }
 
