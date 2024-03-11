@@ -38,8 +38,9 @@ public class stupid : MonoBehaviour
                     p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
                     print("two block!");
                 }
-                else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z); WhereHit = "none"; print("alahson!"); }
+                else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z);  print("alahson!"); }
                 once = false;
+               // WhereHit = "none";
             }
             
 

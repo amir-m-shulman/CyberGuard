@@ -18,7 +18,7 @@ public class Detect_red : MonoBehaviour
         stupid st = gameObject.GetComponent<stupid>();
         
     }
-    private void Update()
+    private void FixedUpdate()
     {
         i += 1;
         if(i % 2 ==0)
@@ -30,23 +30,32 @@ public class Detect_red : MonoBehaviour
 
     // Update is called once per frame
 
-   /* private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("red"))
+        if(collision.CompareTag("red") )
         {
             stupid.WhereHit = massege;
             print("collision with red!");
         }
   
         }
-   */
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("red"))
         {
-            stupid.WhereHit = massege;
+            stupid.WhereHit = "none";
             print("collision with red!");
         }
+
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //   if (collision.CompareTag("red"))
+    //  {
+    //      stupid.WhereHit = massege;
+    //      print("collision with red!");
+    // }
+    //}
 
 }
