@@ -18,9 +18,10 @@ public class red_button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && !MO && pm.PlayerTurn)
+        if (Input.GetKey(KeyCode.Mouse0) && !MO)
         {
             L.intensity = 0.4f;
+            pm.control = "player";
             
 
         }

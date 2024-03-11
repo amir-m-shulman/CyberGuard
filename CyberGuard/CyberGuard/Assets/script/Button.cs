@@ -46,7 +46,6 @@ public class Button : MonoBehaviour
             //change turns
             PM.PlayerTurn = false;
             Invoke("gonpc", 0.5f);
-            print("control is player!");
         }
     }
 

@@ -11,7 +11,7 @@ public class stupid : MonoBehaviour
     private bool nomove = false;
     [SerializeField] GameObject lose_screen;
     next_scene ns;
-    public string WhereHit;
+    public static string WhereHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +28,15 @@ public class stupid : MonoBehaviour
         {
             if (once) 
             {
-                if(spawn_enemy.enters == 0)
+                if (spawn_enemy.enters == 0 && WhereHit != "RedDown")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+                    print("one block!");
                 }
                 else if(WhereHit != "RedDown")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
+                    print("two block!");
                 }
                 else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z); WhereHit = "none"; print("alahson!"); }
                 once = false;
