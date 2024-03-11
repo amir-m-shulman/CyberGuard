@@ -2503,6 +2503,10 @@ PrefabInstance:
       value: stupid blue virus Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5772376655232105609, guid: 151638817f8cb454798e5664f6bf9b4b, type: 3}
+      propertyPath: st
+      value: 
+      objectReference: {fileID: 1351759048}
+    - target: {fileID: 5772376655232105609, guid: 151638817f8cb454798e5664f6bf9b4b, type: 3}
       propertyPath: massege
       value: RedDown
       objectReference: {fileID: 0}
@@ -3717,8 +3721,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.8354006, y: -5.81355, z: 0}
-    m_Extent: {x: 15.199, y: 2.16185, z: 0}
+    m_Center: {x: -3.8393497, y: -5.8173, z: 0}
+    m_Extent: {x: 15.18865, y: 2.1654, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5325,6 +5329,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6378634808733112869, guid: da241f8f91a64d544aafe2a173aa00bc, type: 3}
   m_PrefabInstance: {fileID: 1345498928}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1351759048 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4932466298336478850, guid: 151638817f8cb454798e5664f6bf9b4b, type: 3}
+  m_PrefabInstance: {fileID: 464440420}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fee2659f9ca16b4aaaa27b91d72a3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1377653758
 PrefabInstance:
   m_ObjectHideFlags: 0
