@@ -208,14 +208,14 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.19975579, y: 0.009345043}
-  - {x: -0.04323432, y: 0.0094292965}
+  - {x: -0.52601683, y: 0.011133723}
+  - {x: -0.12523106, y: 0.014177083}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -606,6 +606,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
+      propertyPath: m_Size.x
+      value: 0.704974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.005499333
+      objectReference: {fileID: 0}
     - target: {fileID: 4346869181366632975, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -701,6 +709,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8510525701054000036, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5653230125715350773}
+    - targetCorrespondingSourceObject: {fileID: 8510525701054000036, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5772376655232105609}
   m_SourcePrefab: {fileID: 100100000, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
 --- !u!1 &2325287917419925637 stripped
 GameObject:
@@ -742,6 +753,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5772376655232105609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325287917419925637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8008636a2c2fbda46a6222f8692235e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  massege: 
 --- !u!4 &7573056949718366129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4559477008927640720, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}

@@ -8,6 +8,7 @@ TagManager:
   - go to level one
   - talk
   - blue virus
+  - red
   layers:
   - Default
   - TransparentFX

@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        print(CanMove);
         Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
         pos = new Vector2(Horizontal * moveSpeed, Vertical * moveSpeed);

@@ -38,6 +38,16 @@ public class Button : MonoBehaviour
             print("move!");
             go = true;
         }
+        else if(Input.GetKey("space") && PM.control == "red")
+        {
+            transform.gameObject.tag = "red";
+            // make game square red
+            L.color = Color.red;
+            //change turns
+            PM.PlayerTurn = false;
+            Invoke("gonpc", 0.5f);
+            print("control is player!");
+        }
     }
 
     private void OnMouseExit()
