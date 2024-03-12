@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject talk_text;
 
     Rigidbody2D rb;
+    [SerializeField] GameObject LoseScreen;
 
     public static string enemy;
     //for fight
@@ -103,5 +104,9 @@ public class PlayerMovement : MonoBehaviour
     private void respawn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void lose()
+    {
+        LoseScreen.SetActive(true);
     }
 }

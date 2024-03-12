@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0027999878, y: 0.0024000108, z: 0}
-    m_Extent: {x: 1.0055, y: 0.9973, z: 0}
+    m_Center: {x: 0.0040500164, y: -0.00080001354, z: 0}
+    m_Extent: {x: 1.00125, y: 1.0059, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -148,8 +148,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0025999844, y: -0.0042999685, z: 0}
-    m_Extent: {x: 1.0015, y: 1.0033, z: 0}
+    m_Center: {x: -0.0015999675, y: -0.0027000308, z: 0}
+    m_Extent: {x: 1.006, y: 1.0004001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 5130164692985401012}
   m_Layer: 0
   m_Name: SquareG
-  m_TagString: Untagged
+  m_TagString: blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,7 +268,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -281,10 +281,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0021538734, y: -0.0014818907}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -295,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9971695, y: 0.9928554}
   m_EdgeRadius: 0
 --- !u!114 &5130164692985401012
 MonoBehaviour:
@@ -312,3 +312,4 @@ MonoBehaviour:
   L: {fileID: 1390668314507969682}
   player: {fileID: 0}
   PM: {fileID: 0}
+  NoRed: 0

@@ -29,7 +29,7 @@ public class red_button : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        L.intensity = 1.5f;
+        
         MO = true;
 
     }
@@ -42,6 +42,7 @@ public class red_button : MonoBehaviour
     
     public void CR()
     {
+        L.intensity = 1.5f;
         pm.control = "red";
         print("now control is red!");
     }

@@ -9,6 +9,7 @@ TagManager:
   - talk
   - blue virus
   - red
+  - blue
   layers:
   - Default
   - TransparentFX

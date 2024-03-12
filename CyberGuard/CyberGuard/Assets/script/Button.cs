@@ -10,6 +10,7 @@ public class Button : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] PlayerMovement PM;
     bool go;
+    public bool NoRed;
     // Start is called before the first frame update
     
     private void Update()
@@ -38,7 +39,7 @@ public class Button : MonoBehaviour
             print("move!");
             go = true;
         }
-        else if(Input.GetKey("space") && PM.control == "red")
+        else if(Input.GetKey("space") && PM.control == "red" && !NoRed)
         {
             transform.gameObject.tag = "red";
             // make game square red

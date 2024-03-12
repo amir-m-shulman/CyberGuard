@@ -9,7 +9,6 @@ public class stupid : MonoBehaviour
     private bool once = false;
     private Animator a;
     private bool nomove = false;
-    [SerializeField] GameObject lose_screen;
     next_scene ns;
     public static string WhereHit;
     // Start is called before the first frame update
@@ -57,14 +56,25 @@ public class stupid : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("red"))
         {
             die();
         }
         if(collision.gameObject.CompareTag("Finish"))
         {
-            lose_screen.SetActive(true);
+            PM.lose();
             print("you lost!");
+        }
+        if(collision.gameObject.CompareTag("blue"))
+        {
+            collision.gameObject.GetComponent<Button>().NoRed = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("blue"))
+        {
+           collision.gameObject.GetComponent<Button>().NoRed = false;
         }
     }
     private void moveplayer()
@@ -82,6 +92,5 @@ public class stupid : MonoBehaviour
     private void dt()
     {
         ns.Next_level();
-        Destroy(this);
     }
 }

@@ -13,7 +13,7 @@ public class Detect_red : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // if (spawn_enemy.enters == 0) { Destroy(this); }
+        if (spawn_enemy.enters == 0) { Destroy(this); }
         PlayerMovement pm = GetComponent<PlayerMovement>();
         stupid st = gameObject.GetComponent<stupid>();
         
@@ -30,24 +30,7 @@ public class Detect_red : MonoBehaviour
 
     // Update is called once per frame
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.CompareTag("red") )
-        {
-            stupid.WhereHit = massege;
-            print("collision with red!");
-        }
-  
-        }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("red"))
-        {
-            stupid.WhereHit = "none";
-            print("collision with red!");
-        }
-
-    }
+    
 
     //private void OnTriggerEnter2D(Collider2D collision)
     // {
@@ -57,5 +40,23 @@ public class Detect_red : MonoBehaviour
     //      print("collision with red!");
     // }
     //}
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
+        {
+            stupid.WhereHit = massege;
+            print("collision with red!");
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
+        {
+            stupid.WhereHit = "none";
+            print("collision with red!");
+        }
+        
+    }
+
 
 }

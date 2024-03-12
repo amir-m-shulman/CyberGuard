@@ -832,11 +832,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Size.x
-      value: 0.704974
+      value: 0.102290705
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
+      propertyPath: m_Size.y
+      value: 0.11007452
       objectReference: {fileID: 0}
     - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Offset.x
-      value: -0.005499333
+      value: 0.0073237047
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.015195608
       objectReference: {fileID: 0}
     - target: {fileID: 4346869181366632975, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Color.a
@@ -954,7 +962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fee2659f9ca16b4aaaa27b91d72a3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lose_screen: {fileID: 0}
 --- !u!95 &5653230125715350773
 Animator:
   serializedVersion: 5

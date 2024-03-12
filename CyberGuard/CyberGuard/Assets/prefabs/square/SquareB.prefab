@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0024500191, y: 0.0018000007, z: 0}
-    m_Extent: {x: 0.99925005, y: 1.0035, z: 0}
+    m_Center: {x: -0.0062000155, y: -0.0036500096, z: 0}
+    m_Extent: {x: 0.9996, y: 1.00575, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5390408192178632039}
   m_Layer: 0
   m_Name: SquareB
-  m_TagString: Untagged
+  m_TagString: blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   L: {fileID: 7115745728433876020}
   player: {fileID: 0}
   PM: {fileID: 0}
+  NoRed: 0
 --- !u!61 &5390408192178632039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -214,10 +215,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000492692, y: 0.0011678338}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -228,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0025866, y: 0.9989456}
   m_EdgeRadius: 0
 --- !u!1 &7643894807970348680
 GameObject:
@@ -296,8 +297,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00090003014, y: 0.001549989, z: 0}
-    m_Extent: {x: 1.0085, y: 1.00105, z: 0}
+    m_Center: {x: -0.0011000037, y: 0.0036000013, z: 0}
+    m_Extent: {x: 1.0083001, y: 1.0044, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
