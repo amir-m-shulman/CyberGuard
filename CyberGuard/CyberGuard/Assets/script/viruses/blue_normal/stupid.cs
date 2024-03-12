@@ -11,6 +11,8 @@ public class stupid : MonoBehaviour
     private bool nomove = false;
     next_scene ns;
     public static string WhereHit;
+    BoxCollider2D boxy;
+    private bool onse;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class stupid : MonoBehaviour
         PM = p.GetComponent<PlayerMovement>();
         a = GetComponent<Animator>();
         ns = p.GetComponent<next_scene>();
+        boxy = gameObject.GetComponent<BoxCollider2D>();
+
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class stupid : MonoBehaviour
         {
             if (once) 
             {
+                boxy.enabled = false;
                 if (spawn_enemy.enters == 0 && WhereHit != "RedDown")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
@@ -47,9 +52,10 @@ public class stupid : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, p, 15 * Time.deltaTime);
             }
-            else {Invoke("moveplayer",0.5f); PM.GoNpc = false; once = true;}
-            
-            
+            else {Invoke("moveplayer",0.5f); PM.GoNpc = false; once = true; boxy.enabled = true;
+            }
+
+
 
         }
         else { once = true; }
@@ -83,11 +89,16 @@ public class stupid : MonoBehaviour
     }
     private void die()
     {
-        nomove = true;
-        a.SetTrigger("die");
-        spawn_enemy.enters += 1;
-        print(spawn_enemy.enters);
-        Invoke("dt", 1);
+        if(!onse)
+        {
+            nomove = true;
+            a.SetTrigger("die");
+            spawn_enemy.enters += 1;
+            print(spawn_enemy.enters);
+            Invoke("dt", 1);
+            onse = true;
+        }
+        
     }
     private void dt()
     {

@@ -40,7 +40,7 @@ public class Detect_red : MonoBehaviour
     //      print("collision with red!");
     // }
     //}
-    private void OnCollisionStay2D(Collision2D collision)
+   /* private void OnTriggerStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
         {
@@ -56,6 +56,23 @@ public class Detect_red : MonoBehaviour
             print("collision with red!");
         }
         
+    }
+   */
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
+        {
+            stupid.WhereHit = massege;
+            print("collision with red!");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
+        {
+            stupid.WhereHit = "none";
+            print("collision with red!");
+        }
     }
 
 

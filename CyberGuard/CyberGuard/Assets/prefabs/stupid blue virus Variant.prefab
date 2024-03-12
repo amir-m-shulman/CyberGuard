@@ -272,7 +272,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.52601683, y: 0.011133723}
-  - {x: -0.12523106, y: 0.014177083}
+  - {x: 0.9391557, y: 0.029654419}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -832,19 +832,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Size.x
-      value: 0.102290705
+      value: 0.6960031
       objectReference: {fileID: 0}
     - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Size.y
-      value: 0.11007452
+      value: 0.63306713
       objectReference: {fileID: 0}
     - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Offset.x
-      value: 0.0073237047
+      value: 0.0015674233
       objectReference: {fileID: 0}
     - target: {fileID: 1288404992061292686, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Offset.y
-      value: 0.015195608
+      value: 0.0003938675
       objectReference: {fileID: 0}
     - target: {fileID: 4346869181366632975, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_Color.a
@@ -860,11 +860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559477008927640720, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 4559477008927640720, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.03
+      value: 9.999
       objectReference: {fileID: 0}
     - target: {fileID: 4559477008927640720, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_LocalPosition.z
