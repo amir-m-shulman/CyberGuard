@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/fight.unity
     guid: d90b822b2f15c554ca9257bb03b99eca
+  - enabled: 1
+    path: Assets/Scenes/LVL1.unity
+    guid: a6fc663012a5d3545926bb388a8c976b
   m_configObjects: {}

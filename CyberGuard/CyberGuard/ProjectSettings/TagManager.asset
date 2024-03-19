@@ -5,11 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - computa
-  - go to level one
   - talk
   - blue virus
   - red
   - blue
+  - GTL
   layers:
   - Default
   - TransparentFX

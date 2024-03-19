@@ -11,16 +11,25 @@ public class Button : MonoBehaviour
     [SerializeField] PlayerMovement PM;
     bool go;
     public bool NoRed;
+    BoxCollider2D boxy;
     // Start is called before the first frame update
-    
+    private void Start()
+    {
+        boxy = player.GetComponent<BoxCollider2D>();
+    }
+
     private void Update()
     {
         if(go )
         {
+            boxy.enabled = false;
+
             player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, 15 * Time.deltaTime);
             if(player.transform.position == transform.position)
             {
                 go = false;
+                boxy.enabled = true;
+
             }
         }
     }
@@ -31,7 +40,7 @@ public class Button : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn && Vector2.Distance(player.transform.position,transform.position) < 3 * PM.Mish && Vector2.Distance(player.transform.position, transform.position) > 1)
+        if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn && Vector2.Distance(player.transform.position,transform.position) < 3 && Vector2.Distance(player.transform.position, transform.position) > 1)
         {
             //player.transform.position = transform.position;
             PM.PlayerTurn = false;

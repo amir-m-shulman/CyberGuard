@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Animator animator;
 
-    [SerializeField] next_scene ns;
-
     [SerializeField] GameObject talk_text;
 
     Rigidbody2D rb;
@@ -28,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     public string control = "player";
     public bool PlayerTurn = true;
     public bool GoNpc = false;
-    public int Mish = 1;
     private void Start()
     {
         SR = GetComponent<SpriteRenderer>();
@@ -83,13 +80,17 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector2(0, 0);
         }
+        if (collision.gameObject.CompareTag("GTL"))
+        {
+            collision.gameObject.GetComponent<next_scene>().Next_level();
+
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("go to level one"))
+        if(collision.gameObject.CompareTag("GTL"))
         {
-            ns.Next_level();
-            print("go to level one!");
+            collision.gameObject.GetComponent<next_scene>().Next_level();
 
         }
         if(collision.gameObject.CompareTag("talk") && talk_text != null)

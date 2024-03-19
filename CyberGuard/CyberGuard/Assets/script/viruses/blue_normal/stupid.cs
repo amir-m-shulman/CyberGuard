@@ -35,12 +35,10 @@ public class stupid : MonoBehaviour
                 if (spawn_enemy.enters == 0 && WhereHit != "RedDown")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
-                    print("one block!");
                 }
                 else if(WhereHit != "RedDown")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
-                    print("two block!");
                 }
                 else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z);  print("alahson!"); }
                 once = false;
@@ -69,7 +67,6 @@ public class stupid : MonoBehaviour
         if(collision.gameObject.CompareTag("Finish"))
         {
             PM.lose();
-            print("you lost!");
         }
         if(collision.gameObject.CompareTag("blue"))
         {
