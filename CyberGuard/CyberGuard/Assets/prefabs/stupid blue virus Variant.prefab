@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3107270305761061590}
   - component: {fileID: 8986269898082782209}
+  - component: {fileID: 8973722694215018922}
   m_Layer: 0
   m_Name: Ddown
   m_TagString: Untagged
@@ -45,6 +46,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   massege: RedDown
+--- !u!50 &8973722694215018922
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2867851277922247797}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &6223520598290955041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,7 +107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559477008927640720, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4559477008927640720, guid: 61fd4bf3a03362744bd00a96d7227359, type: 3}
       propertyPath: m_LocalPosition.x
@@ -164,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fee2659f9ca16b4aaaa27b91d72a3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  once: 0
   down: {fileID: 0}
 --- !u!95 &5653230125715350773
 Animator:

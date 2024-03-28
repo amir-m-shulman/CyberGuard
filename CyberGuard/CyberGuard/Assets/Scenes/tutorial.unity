@@ -1006,7 +1006,6 @@ MonoBehaviour:
   - {fileID: 1564205213}
   - {fileID: 1152273874}
   - {fileID: 175113006}
-  above: {fileID: 1046175449}
 --- !u!1001 &773414426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1351,7 +1350,6 @@ MonoBehaviour:
   p: {fileID: 1185401828}
   destroy_together:
   - {fileID: 1046175449}
-  above: {fileID: 0}
 --- !u!1 &1058253800
 GameObject:
   m_ObjectHideFlags: 0

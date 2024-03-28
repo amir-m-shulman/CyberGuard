@@ -51,6 +51,7 @@ public class Button : MonoBehaviour
         {
             PM.PlayerTurn = false;
             transform.gameObject.tag = "red";
+            gameObject.layer = 6;
             Invoke("gonpc", 1f);
             // make game square red
             L.color = Color.red;
