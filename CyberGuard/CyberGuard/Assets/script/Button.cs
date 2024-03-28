@@ -42,20 +42,20 @@ public class Button : MonoBehaviour
     {
         if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn && Vector2.Distance(player.transform.position,transform.position) < 3 && Vector2.Distance(player.transform.position, transform.position) > 1)
         {
-            //player.transform.position = transform.position;
             PM.PlayerTurn = false;
-            Invoke("gonpc", 0.5f);
+            Invoke("gonpc", 1f);
             print("move!");
             go = true;
         }
-        else if(Input.GetKey("space") && PM.control == "red" && !NoRed)
+        else if(Input.GetKey("space") && PM.control == "red" && !NoRed && PM.PlayerTurn)
         {
+            PM.PlayerTurn = false;
             transform.gameObject.tag = "red";
+            Invoke("gonpc", 1f);
             // make game square red
             L.color = Color.red;
             //change turns
-            PM.PlayerTurn = false;
-            Invoke("gonpc", 0.5f);
+            
         }
     }
 

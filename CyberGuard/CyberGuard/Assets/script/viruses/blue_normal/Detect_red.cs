@@ -8,33 +8,33 @@ public class Detect_red : MonoBehaviour
    // [SerializeField] stupid st;
     PlayerMovement pm;
     //stupid st;
-    private int i;
+    stupid st;
+
     
     // Start is called before the first frame update
     void Start()
     {
         if (spawn_enemy.enters == 0) { Destroy(this); }
         PlayerMovement pm = GetComponent<PlayerMovement>();
-        stupid st = gameObject.GetComponent<stupid>();
+        st = gameObject.GetComponent<stupid>();
         
     }
     private void FixedUpdate()
     {
-        i += 1;
-        if(i % 2 ==0)
-        {
-            transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
-        }
-        else{ transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f); }
 
         // rays
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, -Vector2.up);
+        Debug.DrawRay(transform.position, -Vector2.up, Color.red);
+
         
-        
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, -Vector2.up, 3);
-        if (ray.distance < 3 && ray.collider.CompareTag("red") || (ray.distance < 3 && ray.collider.CompareTag("Player")))
+
+
+        if (ray.collider.CompareTag("red")  || (ray.collider.CompareTag("Player")))
         {
             stupid.WhereHit = massege;
+            print("detect red!");
         }
+        
         
     }
 

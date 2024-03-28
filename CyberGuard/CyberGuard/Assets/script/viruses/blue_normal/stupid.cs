@@ -6,7 +6,7 @@ public class stupid : MonoBehaviour
 {
     PlayerMovement PM;
     Vector3 p;
-    private bool once = false;
+    public bool once = false;
     private Animator a;
     private bool nomove = false;
     next_scene ns;
@@ -33,15 +33,16 @@ public class stupid : MonoBehaviour
             if (once) 
             {
                 boxy.enabled = false;
-                if (spawn_enemy.enters == 0 && WhereHit != "RedDown")
+                if (spawn_enemy.enters == 0 )
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+
                 }
                 else if(WhereHit != "RedDown")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
                 }
-                else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z);  print("alahson!"); }
+                else{ p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z); WhereHit = ""; }
                 once = false;
                // WhereHit = "none";
             }

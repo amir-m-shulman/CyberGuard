@@ -431,6 +431,7 @@ MonoBehaviour:
   p: {fileID: 0}
   destroy_together:
   - {fileID: 28890751}
+  above: {fileID: 0}
 --- !u!114 &28890754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3542,8 +3543,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.8387504, y: -5.8146, z: 0}
-    m_Extent: {x: 15.19635, y: 2.1599002, z: 0}
+    m_Center: {x: -3.8393502, y: -5.81695, z: 0}
+    m_Extent: {x: 15.199251, y: 2.15785, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5717,6 +5718,7 @@ MonoBehaviour:
   p: {fileID: 0}
   destroy_together:
   - {fileID: 5922855921079141029}
+  above: {fileID: 0}
 --- !u!1001 &1582294080
 PrefabInstance:
   m_ObjectHideFlags: 0
