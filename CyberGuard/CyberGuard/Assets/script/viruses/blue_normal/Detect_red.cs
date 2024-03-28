@@ -26,39 +26,20 @@ public class Detect_red : MonoBehaviour
             transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
         }
         else{ transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f); }
-    }
 
-    // Update is called once per frame
-
-    
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //   if (collision.CompareTag("red"))
-    //  {
-    //      stupid.WhereHit = massege;
-    //      print("collision with red!");
-    // }
-    //}
-   /* private void OnTriggerStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
+        // rays
+        
+        
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, -Vector2.up, 3);
+        if (ray.distance < 3 && ray.collider.CompareTag("red") || (ray.distance < 3 && ray.collider.CompareTag("Player")))
         {
             stupid.WhereHit = massege;
-            print("collision with red!");
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
-        {
-            stupid.WhereHit = "none";
-            print("collision with red!");
         }
         
     }
-   */
-    private void OnTriggerStay2D(Collider2D collision)
+
+    
+   /* private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("red") || collision.gameObject.CompareTag("Player"))
         {
@@ -73,7 +54,9 @@ public class Detect_red : MonoBehaviour
             stupid.WhereHit = "none";
             print("collision with red!");
         }
+  
     }
+   */
 
 
 }

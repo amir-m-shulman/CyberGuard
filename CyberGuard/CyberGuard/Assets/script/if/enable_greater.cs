@@ -12,14 +12,15 @@ public class enable_greater : MonoBehaviour
     {
         if (spawn_enemy.enters >= enters_num)
         {
-            foreach (GameObject c in destroy_together)
-            {
-                c.SetActive(true);
-            }
             if (p != null)
             {
                 p.transform.position = transform.position;
             }
+            foreach (GameObject c in destroy_together)
+            {
+                c.SetActive(true);
+            }
+            
         }
     }
 }

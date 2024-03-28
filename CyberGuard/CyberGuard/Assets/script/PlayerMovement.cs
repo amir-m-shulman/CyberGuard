@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
             collision.gameObject.GetComponent<next_scene>().Next_level();
 
         }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -100,6 +101,11 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.CompareTag("blue virus"))
         {
             enemy = "blue virus";
+        }
+        if (collision.gameObject.CompareTag("GTL"))
+        {
+            collision.gameObject.GetComponent<next_scene>().Next_level();
+
         }
     }
     private void respawn()

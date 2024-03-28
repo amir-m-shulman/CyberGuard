@@ -13,6 +13,7 @@ public class stupid : MonoBehaviour
     public static string WhereHit;
     BoxCollider2D boxy;
     private bool onse;
+    [SerializeField] GameObject down;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +59,7 @@ public class stupid : MonoBehaviour
         }
         else { once = true; }
     }
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("red"))

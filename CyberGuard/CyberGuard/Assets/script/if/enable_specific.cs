@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class kill_if_greater : MonoBehaviour
+public class enable_specific : MonoBehaviour
 {
     [SerializeField] int enters_num;
     [SerializeField] GameObject p;
@@ -10,7 +10,7 @@ public class kill_if_greater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(spawn_enemy.enters >= enters_num) 
+        if (spawn_enemy.enters == enters_num)
         {
             if (p != null)
             {
@@ -18,12 +18,13 @@ public class kill_if_greater : MonoBehaviour
             }
             foreach (GameObject c in destroy_together)
             {
-                Destroy(c);
+                c.SetActive(true);
             }
             
         }
     }
+}
 
     // Update is called once per frame
-   
-}
+    
+

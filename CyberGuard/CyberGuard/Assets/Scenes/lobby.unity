@@ -2305,6 +2305,7 @@ MonoBehaviour:
   p: {fileID: 0}
   destroy_together:
   - {fileID: 1635706750}
+  above: {fileID: 0}
 --- !u!114 &1635706753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,7 +2318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c6c3a6bd280004ea30872a61456056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enters_num: 2
+  enters_num: 3
   p: {fileID: 0}
   destroy_together:
   - {fileID: 1635706750}
@@ -2577,8 +2578,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.006300032, y: 0.0018000007, z: 0}
-    m_Extent: {x: 1.3027999, y: 1.303, z: 0}
+    m_Center: {x: -0.0012500286, y: 0.002649963, z: 0}
+    m_Extent: {x: 1.30495, y: 1.3032501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
