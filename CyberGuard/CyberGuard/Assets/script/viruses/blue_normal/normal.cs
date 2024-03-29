@@ -35,7 +35,7 @@ public class normal : MonoBehaviour
                 
                 if (WhereHit != "RedDown")
                 {
-                    p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
+                    p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
                 }
                 else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z); }
                 once = false;
