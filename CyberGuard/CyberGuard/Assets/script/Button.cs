@@ -43,7 +43,7 @@ public class Button : MonoBehaviour
         if ( Input.GetKey("space") &&  PM.control == "player" && PM.PlayerTurn && Vector2.Distance(player.transform.position,transform.position) < 3 && Vector2.Distance(player.transform.position, transform.position) > 1)
         {
             PM.PlayerTurn = false;
-            Invoke("gonpc", 1f);
+            Invoke("gonpc", 0.5f);
             print("move!");
             go = true;
         }
@@ -52,7 +52,7 @@ public class Button : MonoBehaviour
             PM.PlayerTurn = false;
             transform.gameObject.tag = "red";
             gameObject.layer = 6;
-            Invoke("gonpc", 1f);
+            Invoke("gonpc", 0.5f);
             // make game square red
             L.color = Color.red;
             //change turns

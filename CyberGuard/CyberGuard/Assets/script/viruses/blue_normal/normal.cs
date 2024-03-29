@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class stupid : MonoBehaviour
+public class normal : MonoBehaviour
 {
     PlayerMovement PM;
     Vector3 p;
@@ -30,29 +30,26 @@ public class stupid : MonoBehaviour
     {
         if (PM.GoNpc)
         {
-            if (once) 
+            if (once)
             {
-                boxy.enabled = false;
-                if (spawn_enemy.enters == 0 )
-                {
-                    p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
-
-                }
-                else if(WhereHit != "RedDown")
+                
+                if (WhereHit != "RedDown")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
                 }
-                else{ p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z);  }
+                else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z); }
                 once = false;
-               // WhereHit = "none";
+                // WhereHit = "none";
             }
-            
 
-            if(transform.position != p && !nomove)
+
+            if (transform.position != p && !nomove)
             {
                 transform.position = Vector2.MoveTowards(transform.position, p, 15 * Time.deltaTime);
             }
-            else {Invoke("moveplayer",0.5f); PM.GoNpc = false; once = true; boxy.enabled = true; WhereHit = "";
+            else
+            {
+                Invoke("moveplayer", 0.5f); PM.GoNpc = false; once = true; boxy.enabled = true; WhereHit = "";
             }
 
 
@@ -60,18 +57,18 @@ public class stupid : MonoBehaviour
         }
         else { once = true; }
     }
-   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("red"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("red"))
         {
             die();
         }
-        if(collision.gameObject.CompareTag("Finish"))
+        if (collision.gameObject.CompareTag("Finish"))
         {
             PM.lose();
         }
-        if(collision.gameObject.CompareTag("blue"))
+        if (collision.gameObject.CompareTag("blue"))
         {
             collision.gameObject.GetComponent<Button>().NoRed = true;
         }
@@ -80,7 +77,7 @@ public class stupid : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("blue"))
         {
-           collision.gameObject.GetComponent<Button>().NoRed = false;
+            collision.gameObject.GetComponent<Button>().NoRed = false;
         }
     }
     private void moveplayer()
@@ -89,7 +86,7 @@ public class stupid : MonoBehaviour
     }
     private void die()
     {
-        if(!onse)
+        if (!onse)
         {
             nomove = true;
             a.SetTrigger("die");
@@ -98,7 +95,7 @@ public class stupid : MonoBehaviour
             Invoke("dt", 1);
             onse = true;
         }
-        
+
     }
     private void dt()
     {

@@ -12,12 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/lobby.unity
     guid: c2e4d23f45e2ffb41ac5bd7d1fa81bd5
   - enabled: 1
-    path: Assets/Scenes/tutorial.unity
+    path: Assets/Scenes/tutorial/tutorial.unity
     guid: 5065e8ca3376fe7489ff2af13a508009
   - enabled: 1
-    path: Assets/Scenes/fight.unity
+    path: Assets/Scenes/tutorial/fight.unity
     guid: d90b822b2f15c554ca9257bb03b99eca
   - enabled: 1
-    path: Assets/Scenes/LVL1.unity
+    path: Assets/Scenes/Level_One/LVL1.unity
     guid: a6fc663012a5d3545926bb388a8c976b
   m_configObjects: {}

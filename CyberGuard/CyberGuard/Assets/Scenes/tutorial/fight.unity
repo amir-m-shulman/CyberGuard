@@ -3543,8 +3543,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.8393502, y: -5.81695, z: 0}
-    m_Extent: {x: 15.199251, y: 2.15785, z: 0}
+    m_Center: {x: -3.8400497, y: -5.8104, z: 0}
+    m_Extent: {x: 15.19915, y: 2.1605, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4425,6 +4425,7 @@ GameObject:
   - component: {fileID: 1153812548}
   - component: {fileID: 1153812547}
   - component: {fileID: 1153812546}
+  - component: {fileID: 1153812549}
   m_Layer: 5
   m_Name: red
   m_TagString: Untagged
@@ -4546,6 +4547,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153812544}
   m_CullTransparentMesh: 1
+--- !u!114 &1153812549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153812544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02317f3d0aab2da418dd309840b6f3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enters_num: 0
+  p: {fileID: 0}
+  destroy_together:
+  - {fileID: 1153812544}
+  above: {fileID: 0}
 --- !u!1001 &1213662787
 PrefabInstance:
   m_ObjectHideFlags: 0

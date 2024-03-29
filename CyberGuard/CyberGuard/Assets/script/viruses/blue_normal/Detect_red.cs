@@ -9,47 +9,42 @@ public class Detect_red : MonoBehaviour
     PlayerMovement pm;
     //stupid st;
     stupid st;
-    int i;
     LayerMask l;
+    RaycastHit2D ray;
 
     
     // Start is called before the first frame update
     void Start()
     {
         if (spawn_enemy.enters == 0) { Destroy(this); }
-        PlayerMovement pm = GetComponent<PlayerMovement>();
-        st = gameObject.GetComponent<stupid>();
+        pm = FindObjectOfType<PlayerMovement>();
+        st = GetComponentInParent<stupid>();
         l = LayerMask.GetMask("red");
         
     }
     private void FixedUpdate()
     {
-        i += 1;
-        if(i % 2 == 0)
-        {
-            transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
-        }
-        else
-        {
-            transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f);
-        }
-
         // rays
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, -Vector2.up,l);
-        Debug.DrawRay(transform.position, -Vector2.up, Color.red);
+        
+        if (!pm.GoNpc)
+        {
+            ray = Physics2D.Raycast(transform.position, -Vector2.up, 3,l);
+            Debug.DrawRay(transform.position, -Vector2.up * 3, Color.red);
+            print("draw ray");
+        }
 
         
 
-
-        if (ray.collider.CompareTag("red")  || (ray.collider.CompareTag("Player")))
+        if(ray.collider != null)
         {
-            stupid.WhereHit = massege;
-            print("detect red!");
+            if (ray.collider.CompareTag("red") || (ray.collider.CompareTag("Player")))
+            {
+                stupid.WhereHit = massege;
+                print("detect red!");
+            }
+            
         }
-        else
-        {
-            stupid.WhereHit = "";
-        }
+       
         
         
     }
