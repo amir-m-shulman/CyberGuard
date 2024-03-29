@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class normal : MonoBehaviour
 {
@@ -13,15 +14,29 @@ public class normal : MonoBehaviour
     public static string WhereHit;
     BoxCollider2D boxy;
     private bool onse;
+    [SerializeField] TextMeshPro ExtraTurnsTxt;
+    int extraturns;
+    RaycastHit2D Rray;
+    LayerMask l;
+    [Header("masseges")] 
+    [SerializeField] string Downmassege;
+
+    [Header("ray points")]
     [SerializeField] GameObject down;
+
     // Start is called before the first frame update
     void Start()
     {
+        extraturns = 3;
+        ExtraTurnsTxt.text = "3";
+        
         GameObject p = GameObject.Find("Player");
         PM = p.GetComponent<PlayerMovement>();
         a = GetComponent<Animator>();
         ns = p.GetComponent<next_scene>();
         boxy = gameObject.GetComponent<BoxCollider2D>();
+        l = LayerMask.GetMask("red");
+
 
     }
 
@@ -56,6 +71,27 @@ public class normal : MonoBehaviour
 
         }
         else { once = true; }
+
+        //rays
+
+        if (!PM.GoNpc)
+        {
+            Rray = Physics2D.Raycast(transform.position, -Vector2.up, 3, l);
+            Debug.DrawRay(transform.position, -Vector2.up * 3, Color.red);
+            print("draw ray");
+        }
+
+
+
+        if (Rray.collider != null)
+        {
+            if (Rray.collider.CompareTag("red") || (Rray.collider.CompareTag("Player")))
+            {
+                stupid.WhereHit = Downmassege;
+                print("detect red!");
+            }
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
