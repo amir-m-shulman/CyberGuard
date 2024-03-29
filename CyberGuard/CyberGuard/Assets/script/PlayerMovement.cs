@@ -85,6 +85,10 @@ public class PlayerMovement : MonoBehaviour
             collision.gameObject.GetComponent<next_scene>().Next_level();
 
         }
+        if(collision.gameObject.CompareTag("red"))
+        {
+            lose();
+        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
