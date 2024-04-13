@@ -20,6 +20,10 @@ public class normal : MonoBehaviour
     LayerMask l;
     
     int random;
+    GameObject pl;
+    // thinking stuff
+    float Xdistance;
+    float Ydistance;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +31,10 @@ public class normal : MonoBehaviour
         extraturns = 3;
         ExtraTurnsTxt.text = "3";
         
-        GameObject p = GameObject.Find("Player");
-        PM = p.GetComponent<PlayerMovement>();
+        pl = GameObject.Find("Player");
+        PM = pl.GetComponent<PlayerMovement>();
         a = GetComponent<Animator>();
-        ns = p.GetComponent<next_scene>();
+        ns = pl.GetComponent<next_scene>();
         boxy = gameObject.GetComponent<BoxCollider2D>();
         l = LayerMask.GetMask("red");
 
@@ -67,6 +71,7 @@ public class normal : MonoBehaviour
                 break;
             
         }
+        stupid.WhereHit = "";
 
 
     }
@@ -79,14 +84,85 @@ public class normal : MonoBehaviour
             // decide what turn to take
             if (once)
             {
-                
-                
+                //calculate distance x
+                if(transform.position.x >= 0 && pl.transform.position.x <= 0 || transform.position.x <= 0 && pl.transform.position.x >= 0)
+                {
+                    Xdistance = Mathf.Abs(transform.position.x) + Mathf.Abs(pl.transform.position.x);
+                }
+                else if(transform.position.x < 0 && pl.transform.position.x < 0 )
+                {
+                    Xdistance = Mathf.Abs(transform.position.x) - Mathf.Abs(pl.transform.position.x);
+                }
+                else
+                {
+                    Xdistance = transform.position.x - pl.transform.position.x;
+                }
+                // calculate distance y
+                if (transform.position.y >= 0 && pl.transform.position.y <= 0 || transform.position.y <= 0 && pl.transform.position.y >= 0)
+                {
+                    Ydistance = Mathf.Abs(transform.position.y) + Mathf.Abs(pl.transform.position.y);
+                }
+                else if (transform.position.y < 0 && pl.transform.position.y < 0)
+                {
+                    Ydistance = Mathf.Abs(transform.position.y) - Mathf.Abs(pl.transform.position.y);
+                }
+                else
+                {
+                    Ydistance = transform.position.y - pl.transform.position.y;
+                }
+                // in case the virus is not in immidiate danger
+                if(stupid.WhereHit == "" && Mathf.Abs(Ydistance) >= 6)
+                {
+                    if(Mathf.Abs(Xdistance) > 2)
+                    {
+                        move("down");
+                    }
+                    else if (Xdistance >= 0)
+                    {
+                        random = Random.Range(1, 4);
+                        if (random != 3) { move("down left"); }
+                        else
+                        {
+                            random = Random.Range(1, 5);
+                            if (random == 2) { move("down right"); }
+                            else
+                            {
+                                move("down");
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        random = Random.Range(1, 4);
+                        if (random != 3) { move("down right"); }
+                        else
+                        {
+                            random = Random.Range(1, 5);
+                            if (random == 2) { move("down left"); }
+                            else
+                            {
+                                move("down");
+                            }
+
+                        }
+                    }
+                }
+
+                //at the end of everything
+                once = false;
+
+
+
+
             }
 
             // check that the bot moved and confirm
             if (transform.position != p && !nomove)
             {
                 transform.position = Vector2.MoveTowards(transform.position, p, 15 * Time.deltaTime);
+                print(p);
+                print(stupid.WhereHit);
             }
             else
             {

@@ -21,6 +21,7 @@ public class Detect_red : MonoBehaviour
         st = GetComponentInParent<stupid>();
         l = LayerMask.GetMask("red");
         
+        
     }
     private void FixedUpdate()
     {
