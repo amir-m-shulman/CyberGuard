@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8008636a2c2fbda46a6222f8692235e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  massege: RedDown
+  massege: down
 --- !u!50 &8973722694215018922
 Rigidbody2D:
   serializedVersion: 4

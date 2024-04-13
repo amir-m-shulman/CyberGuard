@@ -18,11 +18,8 @@ public class normal : MonoBehaviour
     int extraturns;
     RaycastHit2D Rray;
     LayerMask l;
-    [Header("masseges")] 
-    [SerializeField] string Downmassege;
-
-    [Header("ray points")]
-    [SerializeField] GameObject down;
+    
+    int random;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +34,40 @@ public class normal : MonoBehaviour
         boxy = gameObject.GetComponent<BoxCollider2D>();
         l = LayerMask.GetMask("red");
 
+        // decide spawn area
+        random = Random.Range(0, 9);
+        switch(random)
+        {
+            case 0:
+                transform.position = new Vector2(-8, 10);
+                break;
+            case 1:
+                transform.position = new Vector2(-6, 10);
+                break;
+            case 2:
+                transform.position = new Vector2(-4, 10);
+                break;
+            case 3:
+                transform.position = new Vector2(-2, 10);
+                break;
+            case 4:
+                transform.position = new Vector2(0, 10);
+                break;
+            case 5:
+                transform.position = new Vector2(2, 10);
+                break;
+            case 6:
+                transform.position = new Vector2(4, 10);
+                break;
+            case 7:
+                transform.position = new Vector2(6, 10);
+                break;
+            case 8:
+                transform.position = new Vector2(8, 10);
+                break;
+            
+        }
+
 
     }
 
@@ -45,19 +76,14 @@ public class normal : MonoBehaviour
     {
         if (PM.GoNpc)
         {
+            // decide what turn to take
             if (once)
             {
                 
-                if (WhereHit != "RedDown")
-                {
-                    p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
-                }
-                else { p = new Vector3(transform.position.x + 2, transform.position.y - 2, transform.position.z); }
-                once = false;
-                // WhereHit = "none";
+                
             }
 
-
+            // check that the bot moved and confirm
             if (transform.position != p && !nomove)
             {
                 transform.position = Vector2.MoveTowards(transform.position, p, 15 * Time.deltaTime);
@@ -72,26 +98,7 @@ public class normal : MonoBehaviour
         }
         else { once = true; }
 
-        //rays
-
-        if (!PM.GoNpc)
-        {
-            Rray = Physics2D.Raycast(transform.position, -Vector2.up, 3, l);
-            Debug.DrawRay(transform.position, -Vector2.up * 3, Color.red);
-            print("draw ray");
-        }
-
-
-
-        if (Rray.collider != null)
-        {
-            if (Rray.collider.CompareTag("red") || (Rray.collider.CompareTag("Player")))
-            {
-                stupid.WhereHit = Downmassege;
-                print("detect red!");
-            }
-
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -136,5 +143,36 @@ public class normal : MonoBehaviour
     private void dt()
     {
         ns.Next_level();
+    }
+
+    private void move(string direction)
+    {
+        switch (direction)
+        {
+            case "down":
+                p = new Vector2(transform.position.x, transform.position.y - 2);
+                break;
+            case "up":
+                p = new Vector2(transform.position.x, transform.position.y + 2);
+                break;
+            case "left":
+                p = new Vector2(transform.position.x - 2, transform.position.y);
+                break;
+            case "right":
+                p = new Vector2(transform.position.x + 2, transform.position.y);
+                break;
+            case "up right":
+                p = new Vector2(transform.position.x + 2, transform.position.y + 2);
+                break;
+            case "up left":
+                p = new Vector2(transform.position.x - 2, transform.position.y + 2);
+                break;
+            case "down right":
+                p = new Vector2(transform.position.x - 2, transform.position.y + 2);
+                break;
+            case "down left":
+                p = new Vector2(transform.position.x - 2, transform.position.y - 2);
+                break;
+        }
     }
 }

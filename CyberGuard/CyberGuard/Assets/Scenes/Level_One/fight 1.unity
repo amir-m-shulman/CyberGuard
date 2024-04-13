@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96b7a7124b55eb548bbb18ff4d98400f, type: 2}
   m_sharedMaterial: {fileID: -1346778544586562821, guid: 96b7a7124b55eb548bbb18ff4d98400f, type: 2}
@@ -3812,8 +3812,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.8424997, y: -5.80975, z: 0}
-    m_Extent: {x: 15.188399, y: 2.1584501, z: 0}
+    m_Center: {x: -3.8337498, y: -5.8196, z: 0}
+    m_Extent: {x: 15.19075, y: 2.1625, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7149,7 +7149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1.5
-  LoadedScene: 2
+  LoadedScene: 4
 --- !u!1001 &2017441832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7561,17 +7561,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: blue virus one
       objectReference: {fileID: 0}
+    - target: {fileID: 4244582345119272861, guid: 84188b8f3a65e294da4d4b1ecd5577db, type: 3}
+      propertyPath: massege
+      value: down
+      objectReference: {fileID: 0}
     - target: {fileID: 6932021129401392518, guid: 84188b8f3a65e294da4d4b1ecd5577db, type: 3}
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6932021129401392518, guid: 84188b8f3a65e294da4d4b1ecd5577db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6932021129401392518, guid: 84188b8f3a65e294da4d4b1ecd5577db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.999
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6932021129401392518, guid: 84188b8f3a65e294da4d4b1ecd5577db, type: 3}
       propertyPath: m_LocalPosition.z

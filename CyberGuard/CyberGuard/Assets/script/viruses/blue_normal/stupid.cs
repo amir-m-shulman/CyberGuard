@@ -38,7 +38,7 @@ public class stupid : MonoBehaviour
                     p = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
 
                 }
-                else if(WhereHit != "RedDown")
+                else if(WhereHit != "down")
                 {
                     p = new Vector3(transform.position.x, transform.position.y - 4, transform.position.z);
                 }
