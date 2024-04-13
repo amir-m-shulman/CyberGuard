@@ -110,7 +110,7 @@ public class normal : MonoBehaviour
                 {
                     Ydistance = transform.position.y - pl.transform.position.y;
                 }
-                // in case the virus is not in immidiate danger
+                // in case the virus is not in any danger
                 if(stupid.WhereHit == "" && Mathf.Abs(Ydistance) >= 6)
                 {
                     if(Mathf.Abs(Xdistance) > 2)
