@@ -3509,6 +3509,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2052213636972566306, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4621404569585912895, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
       propertyPath: ns
       value: 
@@ -3520,6 +3524,10 @@ PrefabInstance:
     - target: {fileID: 5824702494367772269, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824702494367772269, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5824702494367772269, guid: 174e1ab4b41d38144a2e74a05d9149a3, type: 3}
       propertyPath: m_TagString
@@ -3804,8 +3812,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.8390002, y: -5.8122, z: 0}
-    m_Extent: {x: 15.1894, y: 2.1569, z: 0}
+    m_Center: {x: -3.8424997, y: -5.80975, z: 0}
+    m_Extent: {x: 15.188399, y: 2.1584501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6180,7 +6188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741685348}
   - component: {fileID: 1741685349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
