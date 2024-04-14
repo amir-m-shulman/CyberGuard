@@ -20,8 +20,9 @@ public class Detect_red : MonoBehaviour
         pm = FindObjectOfType<PlayerMovement>();
         st = GetComponentInParent<stupid>();
         l = LayerMask.GetMask("red");
-        
-        
+        st = GetComponentInParent<stupid>();
+
+
     }
     private void FixedUpdate()
     {
@@ -29,46 +30,9 @@ public class Detect_red : MonoBehaviour
         
         if (!pm.GoNpc)
         {
-            switch (massege)
-            {
-                case "down":
-                    ray = Physics2D.Raycast(transform.position, -Vector2.up, 3, l);
-                    Debug.DrawRay(transform.position, -Vector2.up * 3, Color.red);
-                    break;
-                case "up":
-                    ray = Physics2D.Raycast(transform.position, Vector2.up, 3, l);
-                    Debug.DrawRay(transform.position, Vector2.up * 3, Color.red);
-                    break;
-                case "left":
-                    ray = Physics2D.Raycast(transform.position, Vector2.left, 3, l);
-                    Debug.DrawRay(transform.position, Vector2.left * 3, Color.red);
-                    break;
-                case "right":
-                    ray = Physics2D.Raycast(transform.position, Vector2.right, 3, l);
-                    Debug.DrawRay(transform.position, Vector2.right * 3, Color.red);
-                    break;
-                case "up right":
-                    ray = Physics2D.Raycast(transform.position, new Vector2(1,1), 3, l);
-                    Debug.DrawRay(transform.position, new Vector2(1, 1) * 3, Color.red);
-                    break;
-                case "up left":
-                    ray = Physics2D.Raycast(transform.position, new Vector2(-1,1), 3, l);
-                    Debug.DrawRay(transform.position, new Vector2(-1, 1) * 3, Color.red);
-                    break;
-                case "down right":
-                    ray = Physics2D.Raycast(transform.position, new Vector2(1,-1), 3, l);
-                    Debug.DrawRay(transform.position, new Vector2(1, -1) * 3, Color.red);
-                    break;
-                case "down left":
-                    ray = Physics2D.Raycast(transform.position, new Vector2(-1,-1), 3, l);
-                    Debug.DrawRay(transform.position, new Vector2(-1, -1) * 3, Color.red);
-                    break;
+            ray = Physics2D.Raycast(transform.position, -Vector2.up, 3, l);
+            Debug.DrawRay(transform.position, -Vector2.up * 3, Color.red);
 
-
-
-
-            }
-           
         }
 
         
@@ -77,7 +41,7 @@ public class Detect_red : MonoBehaviour
         {
             if (ray.collider.CompareTag("red") || (ray.collider.CompareTag("Player")))
             {
-                stupid.WhereHit = massege;
+                st.WhereHit = massege;
                 
             }
             

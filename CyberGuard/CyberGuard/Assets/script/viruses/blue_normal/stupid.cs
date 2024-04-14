@@ -10,7 +10,7 @@ public class stupid : MonoBehaviour
     private Animator a;
     private bool nomove = false;
     next_scene ns;
-    public static string WhereHit;
+    public  string WhereHit;
     BoxCollider2D boxy;
     private bool onse;
     [SerializeField] GameObject down;

@@ -24,6 +24,9 @@ public class normal : MonoBehaviour
     // thinking stuff
     float Xdistance;
     float Ydistance;
+    public string[] masseges;
+
+    bool ThereAreMassages;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +74,6 @@ public class normal : MonoBehaviour
                 break;
             
         }
-        stupid.WhereHit = "";
 
 
     }
@@ -86,7 +88,14 @@ public class normal : MonoBehaviour
             {
                 // disable collider
                 boxy.enabled = false;
-
+                // see if there are any massages
+                for (int i = 0; i == masseges.Length; i++)
+                {
+                     if(masseges[i] != "")
+                    {
+                        ThereAreMassages = true;
+                    }
+                }
                 //calculate distance x
                 if (transform.position.x >= 0 && pl.transform.position.x <= 0 || transform.position.x <= 0 && pl.transform.position.x >= 0)
                 {
@@ -114,7 +123,7 @@ public class normal : MonoBehaviour
                     Ydistance = transform.position.y - pl.transform.position.y;
                 }
                 // if the player is far from the virus and there is not a red block
-                if(stupid.WhereHit == "" && Mathf.Abs(Ydistance) >= 6)
+                if(!ThereAreMassages && Mathf.Abs(Ydistance) >= 6)
                 {
                     if(Mathf.Abs(Xdistance) > 2)
                     {
@@ -155,22 +164,27 @@ public class normal : MonoBehaviour
                 else if(Mathf.Abs(Ydistance) >= 6)
                 {
                     random = Random.Range(1, 6);
-                    if (stupid.WhereHit != "down left" && stupid.WhereHit != "down right")
+                    if (masseges[7] != "down left" && masseges[6] != "down right")
                     {
                         if (Xdistance >= 0 && transform.position.x != -8 && random != 4) { move("down left"); }
                         else { move("down right"); }
                     }
-                    else if(stupid.WhereHit == "down left")
+                    else if(masseges[7] == "down left")
                     {
                         if(Xdistance > 0 && random != 3) { move("down right"); }
                         else { move("down"); }
                     }
-                    else if (stupid.WhereHit == "down right")
+                    else if (masseges[6] == "down right")
                     {
                         if (Xdistance > 0 && random != 2) { move("down left"); }
                         else { move("down"); }
                     }
 
+
+                }
+                // just else. think alone what does this thing do.
+                else
+                {
 
                 }
 
@@ -187,11 +201,19 @@ public class normal : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, p, 15 * Time.deltaTime);
                 print(p);
-                print(stupid.WhereHit);
             }
             else
             {
-                Invoke("moveplayer", 0.5f); PM.GoNpc = false; once = true; boxy.enabled = true; WhereHit = "";
+                Invoke("moveplayer", 0.5f); 
+                PM.GoNpc = false; 
+                once = true; 
+                boxy.enabled = true;
+                ThereAreMassages = false;
+                //reset all masseges
+                for (int i = 0; i == masseges.Length; i++)
+                {
+                    masseges[i] = "";
+                }
             }
 
 
