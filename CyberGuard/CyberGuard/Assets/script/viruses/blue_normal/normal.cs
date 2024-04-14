@@ -24,7 +24,7 @@ public class normal : MonoBehaviour
     // thinking stuff
     float Xdistance;
     float Ydistance;
-    public string[] masseges;
+    public List<string> masseges = new();
 
     bool ThereAreMassages;
 
@@ -40,6 +40,7 @@ public class normal : MonoBehaviour
         ns = pl.GetComponent<next_scene>();
         boxy = gameObject.GetComponent<BoxCollider2D>();
         l = LayerMask.GetMask("red");
+        print(masseges.Count);
 
         // decide spawn area
         random = Random.Range(0, 9);
@@ -89,7 +90,7 @@ public class normal : MonoBehaviour
                 // disable collider
                 boxy.enabled = false;
                 // see if there are any massages
-                for (int i = 0; i == masseges.Length; i++)
+                for (int i = 0; i != masseges.Count; i++)
                 {
                      if(masseges[i] != "")
                     {
@@ -122,6 +123,7 @@ public class normal : MonoBehaviour
                 {
                     Ydistance = transform.position.y - pl.transform.position.y;
                 }
+                print(ThereAreMassages);
                 // if the player is far from the virus and there is not a red block
                 if(!ThereAreMassages && Mathf.Abs(Ydistance) >= 6)
                 {
@@ -210,7 +212,7 @@ public class normal : MonoBehaviour
                 boxy.enabled = true;
                 ThereAreMassages = false;
                 //reset all masseges
-                for (int i = 0; i == masseges.Length; i++)
+                for (int i = 0; i != masseges.Count; i++)
                 {
                     masseges[i] = "";
                 }
