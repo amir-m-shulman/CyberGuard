@@ -84,8 +84,11 @@ public class normal : MonoBehaviour
             // decide what turn to take
             if (once)
             {
+                // disable collider
+                boxy.enabled = false;
+
                 //calculate distance x
-                if(transform.position.x >= 0 && pl.transform.position.x <= 0 || transform.position.x <= 0 && pl.transform.position.x >= 0)
+                if (transform.position.x >= 0 && pl.transform.position.x <= 0 || transform.position.x <= 0 && pl.transform.position.x >= 0)
                 {
                     Xdistance = Mathf.Abs(transform.position.x) + Mathf.Abs(pl.transform.position.x);
                 }
@@ -110,7 +113,7 @@ public class normal : MonoBehaviour
                 {
                     Ydistance = transform.position.y - pl.transform.position.y;
                 }
-                // in case the virus is not in any danger
+                // if the player is far from the virus and there is not a red block
                 if(stupid.WhereHit == "" && Mathf.Abs(Ydistance) >= 6)
                 {
                     if(Mathf.Abs(Xdistance) > 2)
@@ -120,11 +123,11 @@ public class normal : MonoBehaviour
                     else if (Xdistance >= 0)
                     {
                         random = Random.Range(1, 4);
-                        if (random != 3) { move("down left"); }
+                        if (random != 3 && transform.position.x != -8) { move("down left"); }
                         else
                         {
                             random = Random.Range(1, 5);
-                            if (random == 2) { move("down right"); }
+                            if (random == 2 && transform.position.x != 8) { move("down right"); }
                             else
                             {
                                 move("down");
@@ -135,11 +138,11 @@ public class normal : MonoBehaviour
                     else
                     {
                         random = Random.Range(1, 4);
-                        if (random != 3) { move("down right"); }
+                        if (random != 3 && transform.position.x != -8) { move("down right"); }
                         else
                         {
                             random = Random.Range(1, 5);
-                            if (random == 2) { move("down left"); }
+                            if (random == 2 && transform.position.x != 8) { move("down left"); }
                             else
                             {
                                 move("down");
@@ -147,6 +150,28 @@ public class normal : MonoBehaviour
 
                         }
                     }
+                }
+                // if there is a red block but the player is far from the virus 
+                else if(Mathf.Abs(Ydistance) >= 6)
+                {
+                    random = Random.Range(1, 6);
+                    if (stupid.WhereHit != "down left" && stupid.WhereHit != "down right")
+                    {
+                        if (Xdistance >= 0 && transform.position.x != -8 && random != 4) { move("down left"); }
+                        else { move("down right"); }
+                    }
+                    else if(stupid.WhereHit == "down left")
+                    {
+                        if(Xdistance > 0 && random != 3) { move("down right"); }
+                        else { move("down"); }
+                    }
+                    else if (stupid.WhereHit == "down right")
+                    {
+                        if (Xdistance > 0 && random != 2) { move("down left"); }
+                        else { move("down"); }
+                    }
+
+
                 }
 
                 //at the end of everything
@@ -244,7 +269,7 @@ public class normal : MonoBehaviour
                 p = new Vector2(transform.position.x - 2, transform.position.y + 2);
                 break;
             case "down right":
-                p = new Vector2(transform.position.x - 2, transform.position.y + 2);
+                p = new Vector2(transform.position.x + 2, transform.position.y - 2);
                 break;
             case "down left":
                 p = new Vector2(transform.position.x - 2, transform.position.y - 2);
