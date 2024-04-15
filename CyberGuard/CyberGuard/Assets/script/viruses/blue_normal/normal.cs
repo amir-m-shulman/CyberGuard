@@ -12,7 +12,7 @@ public class normal : MonoBehaviour
     private bool nomove = false;
     next_scene ns;
     public static string WhereHit;
-    BoxCollider2D boxy;
+    [SerializeField] BoxCollider2D boxy;
     private bool onse;
     [SerializeField] TextMeshPro ExtraTurnsTxt;
     int extraturns;
@@ -27,6 +27,10 @@ public class normal : MonoBehaviour
     public List<string> masseges = new();
 
     bool ThereAreMassages;
+    float max;
+    float max2;
+
+    DummyBN bn;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +42,8 @@ public class normal : MonoBehaviour
         PM = pl.GetComponent<PlayerMovement>();
         a = GetComponent<Animator>();
         ns = pl.GetComponent<next_scene>();
-        boxy = gameObject.GetComponent<BoxCollider2D>();
+        bn = FindObjectOfType<DummyBN>();
+
         l = LayerMask.GetMask("red");
         print(masseges.Count);
 
@@ -82,13 +87,63 @@ public class normal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (PM.GoNpc)
         {
             // decide what turn to take
             if (once)
             {
+
+                bn.Movedummy();
                 // disable collider
                 boxy.enabled = false;
+                if (bn.CanCalculate)
+                {
+                    //check the best move
+                    for (int i = 15; i >= 8; i--)
+                    {
+                        print("calculating best move!!");
+
+                        if (max < bn.StateScore[i] + bn.StateScore[i - 8])
+                        {
+                            max = bn.StateScore[i];
+                            max2 = i;
+                        }
+                    }
+                    if (max2 > 7) { max2 -= 8; }
+
+                    //do the move
+                    switch (max2)
+                    {
+                        case 0:
+                            print("best move is down");
+                            move("down");
+                            break;
+                        case 1:
+                            move("up");
+                            break;
+                        case 2:
+                            move("left");
+                            break;
+                        case 3:
+                            move("right");
+                            break;
+                        case 4:
+                            move("up right");
+                            break;
+                        case 5:
+                            move("up left");
+                            break;
+                        case 6:
+                            move("down right");
+                            break;
+                        case 7:
+                            move("down left");
+                            break;
+                    }
+                }
+               
+                /*
                 // see if there are any massages
                 for (int i = 0; i != masseges.Count; i++)
                 {
@@ -169,16 +224,17 @@ public class normal : MonoBehaviour
                     if (masseges[7] != "down left" && masseges[6] != "down right")
                     {
                         if (Xdistance >= 0 && transform.position.x != -8 && random != 4) { move("down left"); }
-                        else { move("down right"); }
+                        else if(transform.position.x != 8) { move("down right"); }
+                        print("nothing to do 5");
                     }
                     else if(masseges[7] == "down left")
                     {
-                        if(Xdistance > 0 && random != 3) { move("down right"); }
+                        if(Xdistance > 0 && random != 3 && transform.position.x != 8) { move("down right"); }
                         else { move("down"); }
                     }
                     else if (masseges[6] == "down right")
                     {
-                        if (Xdistance > 0 && random != 2) { move("down left"); }
+                        if (Xdistance > 0 && random != 2 && transform.position.x != -8) { move("down left"); }
                         else { move("down"); }
                     }
 
@@ -201,7 +257,7 @@ public class normal : MonoBehaviour
                         {
                             if (transform.position.x != 8) { move("down right"); }
                             else if(random != 2) { move("down"); }
-                            else { move("up"); }
+                            else if(transform.position.y < 10) { move("up"); }
                         }
                        
                     }
@@ -212,19 +268,44 @@ public class normal : MonoBehaviour
                         {
                             if (transform.position.x != -8 && Ydistance != 2 && random != 4) { move("down left"); }
                             else if (Ydistance != 2 && random != 4) { move("down"); }
-                            else if (transform.position.x != -8 && random != 2) { move("up left"); }
+                            else if (transform.position.x != -8 && random != 2 && transform.position.y < 10) { move("up left"); }
                             else { move("up"); }
                         }
                         else if (Xdistance < 0)
                         {
                             if (transform.position.x != 8 && Ydistance != 2 && random != 4) { move("down right"); }
                             else if (Ydistance != 2 && random != 4) { move("down"); }
-                            else if (transform.position.x != -8 && random != 2) { move("up right"); }
-                            else { move("up"); }
+                            else if (transform.position.x != 8 && random != 2 && transform.position.y < 10) { move("up right"); }
+                            else if(transform.position.y < 10) { move("up"); }
                         }
                     }
                     
                 }
+                // if the player is close and there is red
+                else
+                {
+                    random = Random.Range(0, 5);
+                    if (Xdistance > 0)
+                    {
+                        if (transform.position.x != -8 && Ydistance != 2 && random != 4 && masseges[7] != "down left") { move("down left"); }
+                        else if (Ydistance != 2 && random != 4 && masseges[0] != "down") { move("down"); }
+                        else if (transform.position.x != -8 && random != 2 && masseges[5] != "up left" && transform.position.y < 10) { move("up left"); }
+                        else if (masseges[1] != "up" && transform.position.y < 10) { move("up"); }
+                        else if (masseges[3] != "left" && transform.position.x != -8) { move("left");}
+                        else { print("nothing to do 1"); }
+                    }
+                    else if (Xdistance <= 0)
+                    {
+                        if (transform.position.x != 8 && Ydistance != 2 && random != 4 && masseges[6] != "down right") { move("down right"); }
+                        else if (Ydistance != 2 && random != 4 && masseges[0] != "down") { move("down"); }
+                        else if (transform.position.x != 8 && random != 2 && masseges[4] != "up right" && transform.position.y < 10) { move("up right"); }
+                        else if (masseges[1] != "up" && transform.position.y < 10) { move("up"); }
+                        else if (masseges[4] != "right" && transform.position.x != 8) { move("right"); }
+                        else { print("nothing to do 2"); }
+                    }
+                   
+                }
+            */
 
                 //at the end of everything
                 once = false;
@@ -247,11 +328,14 @@ public class normal : MonoBehaviour
                 once = true; 
                 boxy.enabled = true;
                 ThereAreMassages = false;
+                max = 0;
+                max2 = 0;
                 //reset all masseges
                 for (int i = 0; i != masseges.Count; i++)
                 {
                     masseges[i] = "";
                 }
+                print("reset!");
             }
 
 
