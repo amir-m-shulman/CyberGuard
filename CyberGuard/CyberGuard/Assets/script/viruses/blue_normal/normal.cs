@@ -163,7 +163,7 @@ public class normal : MonoBehaviour
                     }
                 }
                 // if there is a red block but the player is far from the virus 
-                else if(Mathf.Abs(Ydistance) >= 6)
+                else if(Mathf.Abs(Ydistance) >= 6 && ThereAreMassages)
                 {
                     random = Random.Range(1, 6);
                     if (masseges[7] != "down left" && masseges[6] != "down right")
@@ -184,10 +184,41 @@ public class normal : MonoBehaviour
 
 
                 }
-                // just else. think alone what does this thing do.
-                else
+                // if the player is close but there is no immidiate danger * ADD RANDOM
+                else if(Mathf.Abs(Ydistance) < 6 && !ThereAreMassages)
                 {
-
+                    if(Mathf.Abs(Xdistance) > 6)
+                    {
+                        if(Xdistance > 0) 
+                        { 
+                            if(transform.position.x != -8) { move("down left"); }
+                            else { move("down"); }
+                        }
+                        else if(Xdistance < 0)
+                        {
+                            if (transform.position.x != 8) { move("down right"); }
+                            else { move("down"); }
+                        }
+                       
+                    }
+                    else
+                    {
+                        if (Xdistance > 0)
+                        {
+                            if (transform.position.x != -8 && Ydistance != 2) { move("down left"); }
+                            else if (Ydistance != 2) { move("down"); }
+                            else if (transform.position.x != -8) { move("up left"); }
+                            else { move("up"); }
+                        }
+                        else if (Xdistance < 0)
+                        {
+                            if (transform.position.x != 8 && Ydistance != 2) { move("down right"); }
+                            else if (Ydistance != 2) { move("down"); }
+                            else if (transform.position.x != -8) { move("up right"); }
+                            else { move("up"); }
+                        }
+                    }
+                    
                 }
 
                 //at the end of everything
