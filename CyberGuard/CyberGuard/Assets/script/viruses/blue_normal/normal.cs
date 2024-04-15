@@ -184,37 +184,42 @@ public class normal : MonoBehaviour
 
 
                 }
-                // if the player is close but there is no immidiate danger * ADD RANDOM
+                // if the player is close but there is no immidiate danger
                 else if(Mathf.Abs(Ydistance) < 6 && !ThereAreMassages)
                 {
+                    
                     if(Mathf.Abs(Xdistance) > 6)
                     {
-                        if(Xdistance > 0) 
-                        { 
-                            if(transform.position.x != -8) { move("down left"); }
-                            else { move("down"); }
+                        random = Random.Range(0, 6);
+                        if (Xdistance > 0) 
+                        {
+                            if (transform.position.x != -8) { move("down left"); }
+                            else if (random != 3) { move("down"); }
+                            else { move("up"); }
                         }
                         else if(Xdistance < 0)
                         {
                             if (transform.position.x != 8) { move("down right"); }
-                            else { move("down"); }
+                            else if(random != 2) { move("down"); }
+                            else { move("up"); }
                         }
                        
                     }
                     else
                     {
+                        random = Random.Range(0, 5);
                         if (Xdistance > 0)
                         {
-                            if (transform.position.x != -8 && Ydistance != 2) { move("down left"); }
-                            else if (Ydistance != 2) { move("down"); }
-                            else if (transform.position.x != -8) { move("up left"); }
+                            if (transform.position.x != -8 && Ydistance != 2 && random != 4) { move("down left"); }
+                            else if (Ydistance != 2 && random != 4) { move("down"); }
+                            else if (transform.position.x != -8 && random != 2) { move("up left"); }
                             else { move("up"); }
                         }
                         else if (Xdistance < 0)
                         {
-                            if (transform.position.x != 8 && Ydistance != 2) { move("down right"); }
-                            else if (Ydistance != 2) { move("down"); }
-                            else if (transform.position.x != -8) { move("up right"); }
+                            if (transform.position.x != 8 && Ydistance != 2 && random != 4) { move("down right"); }
+                            else if (Ydistance != 2 && random != 4) { move("down"); }
+                            else if (transform.position.x != -8 && random != 2) { move("up right"); }
                             else { move("up"); }
                         }
                     }
